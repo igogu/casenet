@@ -1,1 +1,14 @@
 
+.info {
+    display:flex;
+    flex-flow: wrap;
+    border-style: solid;
+}
+
+.inner {
+    flex: 0 0 50%;
+}
+
+.back{
+    padding-top: 2rem;
+}

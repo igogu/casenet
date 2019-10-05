@@ -1,17 +1,26 @@
 <div class="box">
     <div>
-        <span *ngIf="!movie">{{movieDetail?.title}} details</span>
+        <h1 *ngIf="movieDetail">{{movieDetail?.title}} details</h1>
     </div>
-    <div>
-        <h2>Characters</h2>
-        <li *ngFor="let character of characters">
-                     
-                <span>{{character.name}}</span>
-            
-        </li>
+    <div class="info">
+        <div class="inner">
+            <h2>Movie details</h2>
+            <li>Director: {{movieDetail.director}}</li>
+            <li>Producer: {{movieDetail.producer}}</li>
+            <li>Opening crawl: {{movieDetail.opening_crawl}}</li>
+            <li>Release date: {{movieDetail.release_date}}</li>
+        </div>
+        <div  class="inner">
+            <h2>Characters</h2>
+            <li *ngFor="let character of characters">
+                        
+                    <span>{{character.name}}</span>
+                
+            </li>
+        </div>
     </div>
-    <div>
-        <a (click)="back()">Back</a>
+    <div class="back">
+        <a (click)="back()"> < Go Back</a>
     </div>
 </div>
 
