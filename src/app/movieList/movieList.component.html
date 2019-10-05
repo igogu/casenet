@@ -6,8 +6,19 @@
         <input type="search"  [(ngModel)]="search"> 
         <span>Search</span>
     </div>
-    <div>
-        <li *ngFor="let film of filmsInPage | filter:search">{{film.title}}</li>
+    <div>        
+        <div class="listFilmRow">
+            <h2>Title</h2>
+            <h2>Director</h2>
+            <h2>Release date</h2>
+        </div>
+        <li *ngFor="let film of filmsInPage | filter:search">
+            <div class="listFilmRow">
+                <span>{{film.title}}</span>
+                <span>{{film.director}}</span>
+                <span>{{film.release_date}}</span>
+            </div>
+        </li>
     </div> 
     <div>  
         <span>Page {{currentPage}} out of {{lastPage}} ...</span>
