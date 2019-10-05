@@ -1,3 +1,16 @@
-<span>{{title}}</span>
-
-<li *ngFor="let film of films">{{film.title}}</li>
+<div class="box">
+    <div>
+        <span>{{title}}</span>
+    </div>
+    <div>
+        <li *ngFor="let film of filmsInPage">{{film.title}}</li>
+    </div> 
+    <div>  
+        <span>Page {{currentPage}} out of {{lastPage}} </span>
+        <span *ngIf="currentPage > 1" class="pointer" (click)="firstPage()"> << </span>
+        <span *ngIf="currentPage > 1" class="pointer" (click)="previousPage()"> < </span>
+        <span> {{currentPage}}</span>
+        <span *ngIf="currentPage < lastPage" class="pointer" (click)="nextPage()"> > </span>
+        <span *ngIf="currentPage < lastPage" class="pointer" (click)="endPage()"> >> </span>
+    </div> 
+</div>
