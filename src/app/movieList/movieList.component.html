@@ -14,7 +14,7 @@
         </div>
         <li *ngFor="let film of filmsInPage | filter:search">
             <div class="listFilmRow">
-                <span>{{film.title}}</span>
+                <span class="link" (click)="navigateToMovieDetail(film)">{{film.title}}</span>
                 <span>{{film.director}}</span>
                 <span>{{film.release_date}}</span>
             </div>

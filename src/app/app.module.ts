@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { MovieListComponent } from './movieList/movieList.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './pipe/filter.pipe';
+import { MovieDetailComponent } from './movieDetail/movieDetail.component';
 @NgModule({
   declarations: [
     AppComponent,
     MovieListComponent,
-    FilterPipe
+    FilterPipe,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,

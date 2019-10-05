@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'casenet-movie-list',
@@ -16,10 +17,11 @@ export class MovieListComponent implements OnInit{
   currentPage = 1;
   lastPage = 1;
   search = '';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
     this.http.get(this.url).subscribe((films: any) => {
+      console.log(films)
       this.films = films.results;
       this.updatePageFilms();
       this.updateLastPage();
@@ -51,5 +53,8 @@ export class MovieListComponent implements OnInit{
   }
   updateLastPage() {
     this.lastPage = Math.ceil(this.films.length / this.pageSize);
+  }
+  navigateToMovieDetail(film: any) {
+    this.router.navigate(['/movieDetail', film.episode_id]);
   }
 }
