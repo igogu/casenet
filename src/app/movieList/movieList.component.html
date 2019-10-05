@@ -3,10 +3,14 @@
         <span>{{title}}</span>
     </div>
     <div>
-        <li *ngFor="let film of filmsInPage">{{film.title}}</li>
+        <input type="search"  [(ngModel)]="search"> 
+        <span>Search</span>
+    </div>
+    <div>
+        <li *ngFor="let film of filmsInPage | filter:search">{{film.title}}</li>
     </div> 
     <div>  
-        <span>Page {{currentPage}} out of {{lastPage}} </span>
+        <span>Page {{currentPage}} out of {{lastPage}} ...</span>
         <span *ngIf="currentPage > 1" class="pointer" (click)="firstPage()"> << </span>
         <span *ngIf="currentPage > 1" class="pointer" (click)="previousPage()"> < </span>
         <span> {{currentPage}}</span>

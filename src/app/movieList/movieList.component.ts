@@ -15,6 +15,7 @@ export class MovieListComponent implements OnInit{
   pageSize = 5;
   currentPage = 1;
   lastPage = 1;
+  search = '';
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
